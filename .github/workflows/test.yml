@@ -1,0 +1,10 @@
+name: setup-tests
+on: push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make setup
+      - run: make test
+      - run: make lint
